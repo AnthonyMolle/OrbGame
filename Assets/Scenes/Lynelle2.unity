@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 301632518}
   - component: {fileID: 301632517}
   - component: {fileID: 301632516}
+  - component: {fileID: 301632519}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -612,7 +613,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 536388792}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
@@ -662,6 +663,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301632514}
   m_CullTransparentMesh: 1
+--- !u!114 &301632519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301632514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf7b746a225c478d916024d080d44b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGame: {fileID: 301632516}
 --- !u!1 &346499456
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536388791}
-  - component: {fileID: 536388792}
+  - component: {fileID: 536388793}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -855,7 +869,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &536388792
+--- !u!114 &536388793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -864,7 +878,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 536388790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea7c81c38b7ccbc46b237fc3b4ce37b9, type: 3}
+  m_Script: {fileID: 11500000, guid: cb17522b935824d5195e03491a6cf6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &678746980
@@ -1056,7 +1070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 536388792}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Option
         m_Mode: 1
