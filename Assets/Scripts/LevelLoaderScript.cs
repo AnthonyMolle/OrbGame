@@ -9,31 +9,35 @@ public class LevelLoaderScript : MonoBehaviour
     public float transitionTime = 1f;
 
     // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (Input.GetMouseButtonDown(0)) {
-            LoadNextLevel();
-        }
+        StartCoroutine(DelayedLoadNextLevel());
     }
 
-    public void LoadNextLevel(){
+    IEnumerator DelayedLoadNextLevel()
+    {
+        float delayTime = 5f; // Delay time in seconds
+
+        // Wait for the specified delay time
+        yield return new WaitForSeconds(delayTime);
+
+        LoadNextLevel();
+    }
+
+    public void LoadNextLevel()
+    {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    IEnumerator LoadLevel(int levelIndex) {
-        // play animation
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        // Play animation
         transition.SetTrigger("Start");
 
-        // wait for animation to stop
+        // Wait for the animation to stop
         yield return new WaitForSeconds(transitionTime);
 
-        // load scene
+        // Load scene
         SceneManager.LoadScene(levelIndex);
     }
 }

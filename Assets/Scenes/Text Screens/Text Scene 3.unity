@@ -400,6 +400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 6251803619474554835, guid: 14373d870aebe5242b10a698b56730a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14373d870aebe5242b10a698b56730a2, type: 3}
 --- !u!1 &1781376229
@@ -528,14 +532,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Upon being bestowed this orb, I have come to realize...
-
-
-    I must be
-    the hero the universe needs.'
+  m_text: "To restore time\u2019s stability, we must push through."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f9a7b2324035f04f84e58f563ca5cdd, type: 2}
+  m_sharedMaterial: {fileID: -4173967699241105554, guid: 8f9a7b2324035f04f84e58f563ca5cdd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
