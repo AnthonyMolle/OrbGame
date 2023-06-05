@@ -35,6 +35,20 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded(){
         Debug.Log(groundCheck.position);
         Debug.Log(Physics2D.OverlapCircle(groundCheck.position, .5f, Ground));
-        return Physics2D.OverlapCircle(groundCheck.position, .5f, Ground);
+        if (Physics2D.OverlapCircle(groundCheck.position, .5f, Ground))
+        {
+            if (Physics2D.OverlapCircle(groundCheck.position, .5f, Ground).isTrigger)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 }
