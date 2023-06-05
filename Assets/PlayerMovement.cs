@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask Ground;
     Rigidbody2D playerBody;
+    [SerializeField] public Animator animator;
     Vector2 movementDirectionLR;
+    [SerializeField] public bool facingRight;
     float hMovement;
 
     void Start()
@@ -22,9 +24,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         hMovement = Input.GetAxis("Horizontal") * moveSpeed;
+        animator.SetFloat("MoveSpeed", Mathf.Abs(hMovement));
         if((Input.GetKeyDown(KeyCode.Space)) && isGrounded()){
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpingPower);
+            //animator.SetBool("IsJumping", true);
         }
+        if(playerBody.velocity.y > .1f){
+            animator.SetBool("IsJumping", true);
+        }
+        if(playerBody.velocity.y == 0){
+           animator.SetBool("IsJumping", false);
+        }
+        Flip();
     }
 
     void FixedUpdate()
@@ -36,5 +47,13 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(groundCheck.position);
         Debug.Log(Physics2D.OverlapCircle(groundCheck.position, .5f, Ground));
         return Physics2D.OverlapCircle(groundCheck.position, .5f, Ground);
+    }
+
+    void Flip(){
+        if((hMovement < 0 && facingRight) || (hMovement > 0 && !facingRight))
+        {
+            facingRight = !facingRight;
+            transform.Rotate(new Vector3(0, 180, 0));
+        }
     }
 }
