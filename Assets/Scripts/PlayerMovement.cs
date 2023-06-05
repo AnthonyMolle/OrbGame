@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpingPower = 15;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask Ground;
+    [SerializeField] GameObject spawnPoint;
     Rigidbody2D playerBody;
     Vector2 movementDirectionLR;
     float hMovement;
@@ -35,20 +36,29 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded(){
         Debug.Log(groundCheck.position);
         Debug.Log(Physics2D.OverlapCircle(groundCheck.position, .5f, Ground));
-        if (Physics2D.OverlapCircle(groundCheck.position, .5f, Ground))
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, .5f, Ground);
+
+        if (colliders.Length > 0)
         {
-            if (Physics2D.OverlapCircle(groundCheck.position, .5f, Ground).isTrigger)
+            foreach (Collider2D collider in colliders)
             {
-                return false;
+                if (collider.isTrigger == false)
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return true;
-            }
+
+            return false;
         }
         else
         {
             return false;
         }
+    }
+
+    public void ResetPlayer()
+    {
+        gameObject.transform.position = spawnPoint.transform.position;
     }
 }
