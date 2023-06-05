@@ -30,8 +30,15 @@ public class PlayerMovement : MonoBehaviour
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpingPower);
             //animator.SetBool("IsJumping", true);
         }
+
+        Debug.Log(playerBody.velocity.y);
+
         if(playerBody.velocity.y > .1f){
             animator.SetBool("IsJumping", true);
+        }
+        else
+        {
+            animator.SetBool("IsJumping", false);
         }
         if(playerBody.velocity.y == 0){
            animator.SetBool("IsJumping", false);

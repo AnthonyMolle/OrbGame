@@ -33,6 +33,10 @@ public class DragAndDrop : MonoBehaviour
         {
             held = false;
         }
+        else
+        {
+            held = true;
+        }
 
         if (held)
         {
@@ -40,15 +44,15 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseOver() 
-    {
-        Debug.Log("mouse over");
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Debug.Log("mouse clicked");
-            held = true;
-        }
-    }
+    // private void OnMouseOver() 
+    // {
+    //     Debug.Log("mouse over");
+    //     if (Input.GetKeyDown(KeyCode.Mouse0))
+    //     {
+    //         Debug.Log("mouse clicked");
+    //         held = true;
+    //     }
+    // }
 
     public void ResetPosition()
     {
