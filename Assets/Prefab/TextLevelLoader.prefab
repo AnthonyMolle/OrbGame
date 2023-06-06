@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6251803619474554834}
   - component: {fileID: 43458581532172057}
   m_Layer: 1
-  m_Name: LevelLoader
+  m_Name: TextLevelLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class AutoScroll : MonoBehaviour
 {
-    float speed = 80.0f;
+    
     float textPoseBegin = -680.0f;
     float boundaryTextEnd = 865.0f;
 
     RectTransform myGorectTransform;
-    [SerializeField]
-    TextMeshProUGUI mainText;
 
     [SerializeField]
-    bool isLooping = false;
+    float speed = 140.0f;
+
+    [SerializeField]
+    TextMeshProUGUI mainText;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +37,12 @@ public class AutoScroll : MonoBehaviour
             myGorectTransform.Translate(Vector3.up*speed*Time.deltaTime);
             yield return null;
         }
+
+        if (myGorectTransform.localPosition.y>boundaryTextEnd) {
+            SceneManager.LoadScene("MainMenu");
+            // yield return null;
+        }
+
+        
     }
 }

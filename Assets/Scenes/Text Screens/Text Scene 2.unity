@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251803619474554835, guid: 14373d870aebe5242b10a698b56730a2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14373d870aebe5242b10a698b56730a2, type: 3}
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: But moving forward also requires accepting the past.
+  m_text: Everything holds memories.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f9a7b2324035f04f84e58f563ca5cdd, type: 2}
   m_sharedMaterial: {fileID: -4173967699241105554, guid: 8f9a7b2324035f04f84e58f563ca5cdd, type: 2}
