@@ -20,8 +20,8 @@ public class ScenesManager : MonoBehaviour
     // 2. Add to File -> build settings in the correct order as shown there
     public enum Scene
     {
-        Lynelle2,
-        MainGameScene
+        MainMenu,
+        Level_1_Evan,
     }
 
     public void LoadScene(Scene scene)
@@ -33,7 +33,7 @@ public class ScenesManager : MonoBehaviour
     // A function to load the main game scene.
     public void LoadNewGame()
     {
-        SceneManager.LoadScene(Scene.MainGameScene.ToString());
+        SceneManager.LoadScene(Scene.Level_1_Evan.ToString());
     }
 
     // A function to load the next scene in the game.
@@ -48,6 +48,6 @@ public class ScenesManager : MonoBehaviour
     // ** Lynelle2 can be renamed/replaced
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(Scene.Lynelle2.ToString());
+        SceneManager.LoadScene(Scene.MainMenu.ToString());
     }
 }
