@@ -21,7 +21,9 @@ public class ScenesManager : MonoBehaviour
     public enum Scene
     {
         MainMenu,
+        Level_0_Evan,
         Level_1_Evan,
+        Credits,
     }
 
     public void LoadScene(Scene scene)
@@ -33,7 +35,7 @@ public class ScenesManager : MonoBehaviour
     // A function to load the main game scene.
     public void LoadNewGame()
     {
-        SceneManager.LoadScene(Scene.Level_1_Evan.ToString());
+        SceneManager.LoadScene(Scene.Level_0_Evan.ToString());
     }
 
     // A function to load the next scene in the game.
