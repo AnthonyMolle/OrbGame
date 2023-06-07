@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8d9b74068f4e3ee49940c3e85bb71592
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 70e7ddcc2f0bb400384d26552c14bef5
-  - enabled: 1
     path: Assets/Scenes/Text Screens/Intro Text.unity
     guid: a852ed5f73421d5448f66649dd1e0fec
   - enabled: 1
@@ -32,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Text Screens/Victory.unity
     guid: c0fc24efaa4b64d4da05e7b533f5688b
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 70e7ddcc2f0bb400384d26552c14bef5
   m_configObjects: {}
