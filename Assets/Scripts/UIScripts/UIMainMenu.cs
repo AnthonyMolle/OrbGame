@@ -7,6 +7,7 @@ public class UIMainMenu : MonoBehaviour
 {
 
     [SerializeField] Button startGame;
+    [SerializeField] ScenesManager levelManager;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class UIMainMenu : MonoBehaviour
 
     private void StartNewGame()
     {
-        ScenesManager.Instance.LoadNewGame();
+        levelManager.LoadNextScene();
         // ScenesManager.Instance.LoadScene(ScenesManager.Scene.MainGameScene);
     }
 

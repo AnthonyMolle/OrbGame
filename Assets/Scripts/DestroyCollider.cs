@@ -14,7 +14,8 @@ public class DestroyCollider : MonoBehaviour
         }
         else if (other.gameObject.GetComponentInParent<PlayerMovement>() != null)
         {
-            other.gameObject.transform.position = playerSpawn.transform.position;
+            other.gameObject.GetComponentInParent<PlayerMovement>().ResetPlayer();
+            // other.gameObject.transform.position = playerSpawn.transform.position;
             other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
     }

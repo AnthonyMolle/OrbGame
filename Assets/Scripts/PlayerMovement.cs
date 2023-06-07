@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public bool facingRight;
     float hMovement;
 
+    [SerializeField] AudioSource jumpSFX;
+    [SerializeField] AudioSource deathSFX;
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("MoveSpeed", Mathf.Abs(hMovement));
         if((Input.GetKeyDown(KeyCode.Space)) && isGrounded()){
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpingPower);
+            jumpSFX.Play();
             //animator.SetBool("IsJumping", true);
         }
 
@@ -78,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
     public void ResetPlayer()
     {
         gameObject.transform.position = spawnPoint.transform.position;
+        deathSFX.Play();
     }
 
     void Flip(){

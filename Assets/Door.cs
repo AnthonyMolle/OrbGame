@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
     [SerializeField] Animator anim;
-    [SerializeField] LevelLoaderScript levelLoader;
+    [SerializeField] ScenesManager levelLoader;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -18,6 +19,6 @@ public class Door : MonoBehaviour
 
     public void NextScene()
     {
-        levelLoader.LoadNextLevel();
+        levelLoader.LoadNextScene();
     }
 }
